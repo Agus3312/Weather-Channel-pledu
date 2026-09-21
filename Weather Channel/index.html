@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Channel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="intro-panel" aria-labelledby="page-title">
+      <p class="eyebrow">Pronostico en tiempo real</p>
+      <h1 id="page-title">Weather <span>Channel</span></h1>
+      <p class="intro-copy">Consulta las condiciones actuales de cualquier ciudad.</p>
+
+      <form class="search-form" id="search-form">
+        <label class="sr-only" for="city-input">Nombre de la ciudad</label>
+        <div class="search-field">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="city-input" name="city" type="text" placeholder="Buenos Aires" autocomplete="off" required>
+          <div class="autocomplete-list" id="autocomplete-list" role="listbox" aria-label="Ciudades sugeridas"></div>
+        </div>
+        <button type="submit" id="search-button">
+          <span>Buscar clima</span>
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </form>
+      <p class="status-message" id="status-message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="weather-area" aria-label="Resultado del clima">
+      <div class="empty-state" id="empty-state">
+        <span class="empty-icon" aria-hidden="true">&#9728;</span>
+        <p>Escribi una ciudad para ver su clima actual</p>
+      </div>
+
+      <div class="weather-cards" id="weather-cards" aria-live="polite"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
